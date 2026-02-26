@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontrowMD Brand Style Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            color: #020F18;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #F5F7FA 0%, #EBF3F8 60%, #D8ECF5 100%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 40px;
+            box-shadow: 0 2px 12px rgba(23, 44, 69, 0.06);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #172C45;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #172C45;
+            color: #FFFFFF;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #020F18 0%, #1D4053 50%, #72A4BF 100%);
+            padding: 160px 40px 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "☤";
+            position: absolute;
+            font-size: 600px;
+            color: rgba(114, 164, 191, 0.04);
+            top: -100px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 120px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #172C45;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #72A4BF;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        /* Cards */
+        .card {
+            background-color: rgba(114, 164, 191, 0.08);
+            border: 1px solid #D4E6EF;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 2px 12px rgba(23, 44, 69, 0.06);
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(23, 44, 69, 0.12);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            color: #172C45;
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            color: #1D4053;
+            font-size: 16px;
+        }
+
+        /* Color Swatches */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .color-swatch {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(23, 44, 69, 0.12);
+            transition: all 0.2s ease;
+        }
+
+        .color-swatch:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(23, 44, 69, 0.18);
+        }
+
+        .color-preview {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .color-info {
+            background: white;
+            padding: 20px;
+        }
+
+        .color-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #172C45;
+            margin-bottom: 8px;
+        }
+
+        .color-hex, .color-rgb {
+            font-size: 13px;
+            color: #1D4053;
+            font-family: 'Courier New', monospace;
+            margin: 4px 0;
+        }
+
+        .color-usage {
+            font-size: 13px;
+            color: #72A4BF;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* Logo Section */
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .logo-example {
+            padding: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-example.light {
+            background: white;
+            border: 1px solid #D4E6EF;
+        }
+
+        .logo-example.dark {
+            background: linear-gradient(135deg, #172C45, #1D4053);
+        }
+
+        .logo-example img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        /* Typography Examples */
+        .type-example {
+            margin: 32px 0;
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #D4E6EF;
+        }
+
+        .type-label {
+            font-size: 12px;
+            color: #72A4BF;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .h1-example {
+            font-size: 56px;
+            font-weight: 700;
+            color: #172C45;
+        }
+
+        .h2-example {
+            font-size: 36px;
+            font-weight: 700;
+            color: #172C45;
+        }
+
+        .h3-example {
+            font-size: 26px;
+            color: #172C45;
+        }
+
+        .body-example {
+            font-size: 16px;
+            color: #020F18;
+            line-height: 1.6;
+        }
+
+        /* Button Examples */
+        .button-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background-color: #172C45;
+            color: #FFFFFF;
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #020F18;
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            color: #172C45;
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 15px;
+            font-weight: 400;
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 1.5px solid #172C45;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-ghost:hover {
+            background-color: #172C45;
+            color: #FFFFFF;
+        }
+
+        .btn-teal {
+            background-color: #72A4BF;
+            color: #FFFFFF;
+            border-radius: 50px;
+            padding: 14px 28px;
+            border: none;
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-teal:hover {
+            background-color: #5E8CA8;
+            transform: translateY(-1px);
+        }
+
+        /* Gradient Showcase */
+        .gradient-box {
+            height: 200px;
+            border-radius: 12px;
+            margin: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .gradient-dark {
+            background: linear-gradient(135deg, #020F18 0%, #1D4053 50%, #72A4BF 100%);
+        }
+
+        .gradient-light {
+            background: linear-gradient(135deg, #F5F7FA 0%, #E8F0F5 50%, #D4E6EF 100%);
+            color: #172C45;
+        }
+
+        /* Decorative Elements */
+        .dashed-connector {
+            border-top: 2px dashed rgba(114, 164, 191, 0.45);
+            margin: 40px 0;
+        }
+
+        .step-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #72A4BF, #1D4053);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            margin: 0 auto 16px;
+        }
+
+        /* Dos and Don'ts */
+        .dos-donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .do-box, .dont-box {
+            padding: 32px;
+            border-radius: 12px;
+        }
+
+        .do-box {
+            background: rgba(34, 197, 94, 0.05);
+            border: 2px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .dont-box {
+            background: rgba(239, 68, 68, 0.05);
+            border: 2px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .do-title, .dont-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .do-title {
+            color: #16a34a;
+        }
+
+        .dont-title {
+            color: #dc2626;
+        }
+
+        .do-box ul, .dont-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .do-box li, .dont-box li {
+            padding: 8px 0 8px 32px;
+            position: relative;
+            font-size: 15px;
+        }
+
+        .do-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .dont-box li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Code Display */
+        .code-block {
+            background: #020F18;
+            color: #72A4BF;
+            padding: 24px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+
+        .code-block code {
+            color: #FFFFFF;
+        }
+
+        /* Dark Section */
+        .dark-section {
+            background: linear-gradient(135deg, #020F18 0%, #1D4053 50%, #72A4BF 100%);
+            padding: 80px 0;
+            margin: 0;
+            color: white;
+        }
+
+        .dark-section .section-title {
+            color: white;
+        }
+
+        .dark-section .card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+
+        .dark-section .card h3 {
+            color: white;
+        }
+
+        .dark-section .card p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            background: #172C45;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .grid-2, .grid-3, .logo-showcase, .dos-donts {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <img src="Navy_Graphic_Logo.png" alt="FrontrowMD Logo" class="nav-logo">
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#logo">Logo</a></li>
+            <li><a href="#colors">Colors</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#components">Components</a></li>
+            <li><a href="#voice">Voice</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>FrontrowMD Brand Style Guide</h1>
+        <p>A comprehensive guide to our visual identity, design system, and brand voice. Professional. Trustworthy. Sophisticated.</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Brand Overview -->
+        <section class="section" id="overview">
+            <div class="section-subtitle">01 — INTRODUCTION</div>
+            <h2 class="section-title">Brand Identity Overview</h2>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Who We Are</h3>
+                    <p>FrontrowMD connects wellness brands with a network of 1,700+ clinicians who share products on patient discount pages to build trust and credibility. We also operate ClinicianAI — a clinician-powered AI shopping assistant embedded on brand product pages.</p>
+                </div>
+                <div class="card">
+                    <h3>Brand Personality</h3>
+                    <p>Professional • Trustworthy • Calm • Sophisticated • Modern • Credible</p>
+                    <br>
+                    <p style="font-style: italic; color: #72A4BF;">Medical heritage meets modern marketing. Elegant serif typography. Muted, monotone blues and teals. Never loud or flashy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logo Guidelines -->
+        <section class="section" id="logo">
+            <div class="section-subtitle">02 — IDENTITY</div>
+            <h2 class="section-title">Logo Guidelines</h2>
+            
+            <p style="font-size: 18px; margin-bottom: 40px;">The FrontrowMD logo consists of our custom caduceus icon paired with the Libre Baskerville wordmark "frontrowMD" (lowercase "frontrow", uppercase "MD"). These elements always appear together unless using the standalone icon.</p>
+
+            <div class="logo-showcase">
+                <div class="logo-example light">
+                    <img src="Navy_Graphic_Logo.png" alt="FrontrowMD Logo - Light Version">
+                </div>
+                <div class="logo-example dark">
+                    <img src="White_Graphic_Logo.png" alt="FrontrowMD Logo - Dark Version">
+                </div>
+            </div>
+
+            <div class="dos-donts">
+                <div class="do-box">
+                    <h3 class="do-title">Do's</h3>
+                    <ul>
+                        <li>Use the primary logo on white/light backgrounds</li>
+                        <li>Use the reversed logo on dark backgrounds</li>
+                        <li>Maintain clear space equal to the "M" height</li>
+                        <li>Use provided logo files only</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h3 class="dont-title">Don'ts</h3>
+                    <ul>
+                        <li>Don't stretch or distort the logo proportions</li>
+                        <li>Don't add gradients or effects to the logo</li>
+                        <li>Don't use non-brand colors on the logo</li>
+                        <li>Don't rotate or add shadows to the logo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 64px; margin-bottom: 24px; font-size: 28px; color: #172C45;">ClinicianAI Branding</h3>
+            <p style="font-size: 18px; margin-bottom: 24px;">When creating content specifically about ClinicianAI (the clinician-powered AI shopping assistant product), use the Graphic Gems decorative pattern as a branded background element to distinguish it from general FrontrowMD content.</p>
+            
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; align-items: start;">
+                <div class="card">
+                    <h3>Graphic Gems Usage</h3>
+                    <p>The geometric gem/crystal pattern adds visual distinction to ClinicianAI materials:</p>
+                    <ul style="margin-top: 16px; padding-left: 24px;">
+                        <li style="margin: 8px 0;">Use as a background texture for ClinicianAI social graphics</li>
+                        <li style="margin: 8px 0;">Apply at reduced opacity behind ClinicianAI feature callouts</li>
+                        <li style="margin: 8px 0;">Include in ClinicianAI product pages and marketing materials</li>
+                        <li style="margin: 8px 0;">Available in blue and white background versions</li>
+                    </ul>
+                </div>
+                
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(23, 44, 69, 0.12);">
+                    <img src="Graphic_Gems___blue_background.png" alt="ClinicianAI Graphic Gems - Blue Background" style="width: 100%; display: block;">
+                </div>
+                
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(23, 44, 69, 0.12);">
+                    <img src="Graphic_Gems___white_background.png" alt="ClinicianAI Graphic Gems - White Background" style="width: 100%; display: block;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Palette -->
+        <section class="section" id="colors">
+            <div class="section-subtitle">03 — COLOR SYSTEM</div>
+            <h2 class="section-title">Color Palette</h2>
+            
+            <p style="font-size: 18px; margin-bottom: 40px;">FrontrowMD uses a monotone palette — muted, sophisticated blues and teals that evoke calm, reliability, and depth. This restricted palette maintains brand consistency and professional credibility.</p>
+
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #020F18; color: #FFFFFF;">Aa</div>
+                    <div class="color-info">
+                        <div class="color-name">Midnight Blue</div>
+                        <div class="color-hex">#020F18</div>
+                        <div class="color-rgb">rgb(2, 15, 24)</div>
+                        <div class="color-usage">Darkest tone. Deep backgrounds,<br>text on light.</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #172C45; color: #FFFFFF;">Aa</div>
+                    <div class="color-info">
+                        <div class="color-name">Deep Navy</div>
+                        <div class="color-hex">#172C45</div>
+                        <div class="color-rgb">rgb(23, 44, 69)</div>
+                        <div class="color-usage">Primary dark background.<br>Headers on light bg.</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #1D4053; color: white;">Aa</div>
+                    <div class="color-info">
+                        <div class="color-name">Mid-Navy</div>
+                        <div class="color-hex">#1D4053</div>
+                        <div class="color-rgb">rgb(29, 64, 83)</div>
+                        <div class="color-usage">Gradient midpoint.<br>Subtle section backgrounds.</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #72A4BF; color: #FFFFFF;">Aa</div>
+                    <div class="color-info">
+                        <div class="color-name">Soft Teal</div>
+                        <div class="color-hex">#72A4BF</div>
+                        <div class="color-rgb">rgb(114, 164, 191)</div>
+                        <div class="color-usage">Accent color. Icons, borders,<br>highlights.</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #F5F7FA; color: #172C45;">Aa</div>
+                    <div class="color-info">
+                        <div class="color-name">Light Gray</div>
+                        <div class="color-hex">#F5F7FA</div>
+                        <div class="color-rgb">rgb(245, 247, 250)</div>
+                        <div class="color-usage">Light section backgrounds.<br>Clean, minimal base.</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #D4E6EF; color: #172C45;">Aa</div>
+                    <div class="color-info">
+                        <div class="color-name">Card Border</div>
+                        <div class="color-hex">#D4E6EF</div>
+                        <div class="color-rgb">rgb(212, 230, 239)</div>
+                        <div class="color-usage">Subtle borders on cards.<br>Soft dividing lines.</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 64px; margin-bottom: 24px; font-size: 28px; color: #172C45;">Brand Gradient</h3>
+            <p style="font-size: 16px; margin-bottom: 24px;">The signature FrontrowMD gradient flows through all three primary colors, introducing subtle richness to prevent the palette from feeling flat.</p>
+            
+            <div class="gradient-box gradient-dark">Dark Version</div>
+            <div class="code-block">
+                <code>background: linear-gradient(135deg, #020F18 0%, #1D4053 50%, #72A4BF 100%);</code>
+            </div>
+
+            <div class="gradient-box gradient-light">Light Version</div>
+            <div class="code-block">
+                <code>background: linear-gradient(135deg, #F5F7FA 0%, #E8F0F5 50%, #D4E6EF 100%);</code>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="section" id="typography">
+            <div class="section-subtitle">04 — TYPOGRAPHY</div>
+            <h2 class="section-title">Typography System</h2>
+            
+            <p style="font-size: 18px; margin-bottom: 40px;">Libre Baskerville is our only typeface — an elegant serif that conveys professionalism, trustworthiness, and medical authority. It's used for all text: headlines, body copy, captions, and buttons.</p>
+
+            <div class="code-block">
+                <code>@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');</code>
+            </div>
+
+            <div class="type-example">
+                <div class="type-label">H1 / HERO — 48-64px, Bold</div>
+                <div class="h1-example">Turn doctors into advocates</div>
+            </div>
+
+            <div class="type-example">
+                <div class="type-label">H2 / SECTION — 32-40px, Bold</div>
+                <div class="h2-example">Why ClinicianAI is Unique</div>
+            </div>
+
+            <div class="type-example">
+                <div class="type-label">H3 / SUBSECTION — 24-28px, Regular</div>
+                <div class="h3-example">Comprehensive Research Discovery</div>
+            </div>
+
+            <div class="type-example">
+                <div class="type-label">BODY — 16-18px, Regular</div>
+                <div class="body-example">Shoppers are happy to see how many medical experts are backing your products and why, but they're left wondering whether medical experts think this is a good product for me — turning instead to DIY research, generic AI chatbots, or relying solely on brand copy.</div>
+            </div>
+
+            <div class="type-example">
+                <div class="type-label">STEP LABEL — 11-12px, Bold, Uppercase, Soft Teal</div>
+                <div style="font-size: 12px; color: #72A4BF; font-weight: 700; letter-spacing: 0.05em;">STEP 01</div>
+            </div>
+        </section>
+
+        <!-- Components -->
+        <section class="section" id="components">
+            <div class="section-subtitle">05 — COMPONENTS</div>
+            <h2 class="section-title">Button Styles</h2>
+            
+            <p style="font-size: 18px; margin-bottom: 40px;">All buttons are pill-shaped (fully rounded) — never square or slightly rounded. This is a key brand element.</p>
+
+            <div class="button-showcase">
+                <button class="btn-primary">Primary Button →</button>
+                <button class="btn-ghost">Ghost Button</button>
+                <button class="btn-teal">Teal Accent Button</button>
+            </div>
+
+            <div class="code-block" style="margin-top: 32px;">
+                <code>.btn-primary {
+  background-color: #172C45;
+  color: #FFFFFF;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  padding: 14px 28px;
+  border-radius: 50px; /* Full pill */
+  border: none;
+  transition: all 0.2s ease;
+}</code>
+            </div>
+
+            <h3 style="margin-top: 64px; margin-bottom: 24px; font-size: 28px; color: #172C45;">Card Styles</h3>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="step-icon">1</div>
+                    <h3>Light Card</h3>
+                    <p>Subtle teal tint background with soft border. Used for features, steps, and content cards.</p>
+                </div>
+                <div class="card" style="background: linear-gradient(135deg, #172C45, #1D4053); color: white; border: none;">
+                    <div class="step-icon">2</div>
+                    <h3 style="color: white;">Dark Card</h3>
+                    <p style="color: rgba(255,255,255,0.9);">Gradient background for stats callouts and trust badges on light backgrounds.</p>
+                </div>
+                <div class="card">
+                    <div class="step-icon">3</div>
+                    <h3>Rounded Corners</h3>
+                    <p>All cards use 12-16px border radius. Never sharp corners on cards.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 64px; margin-bottom: 24px; font-size: 28px; color: #172C45;">Decorative Elements</h3>
+            
+            <div class="step-icon" style="margin: 24px auto;">1</div>
+            <p style="text-align: center; color: #72A4BF; margin-bottom: 16px;">Step Icon Circle</p>
+            
+            <div class="dashed-connector"></div>
+            <p style="text-align: center; color: #72A4BF; margin-top: 16px;">Dashed Line Connector</p>
+        </section>
+
+    </div>
+
+    <!-- Dark Section -->
+    <section class="dark-section" id="voice">
+        <div class="container">
+            <div class="section-subtitle" style="color: rgba(255,255,255,0.7);">06 — BRAND VOICE</div>
+            <h2 class="section-title">Tone & Messaging</h2>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Writing Style</h3>
+                    <p>Professional but approachable. Confident and credible — backed by data, clinician networks, and science. Clear and concise — no jargon-heavy marketing speak. Trust-forward — emphasize verification, endorsement, and unbiased credibility.</p>
+                </div>
+                <div class="card">
+                    <h3>Key Messages</h3>
+                    <p>"Turn doctors into your D2C brand's biggest advocates" • "Endorsed by doctors, trusted by all" • 1,700+ clinician network • Uncompensated clinician endorsements • Science-backed, third-party validated • ClinicianAI: clinician-powered AI shopping assistant</p>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 40px;">
+                <div class="card">
+                    <h3>Words to Use</h3>
+                    <p style="line-height: 1.8;">Trust • Verified • Endorsed • Clinician-backed • Science-backed • Credible • Uncompensated • Wellness • Patient-first • Transparent • Evidence-based • Independent • Personalized</p>
+                </div>
+                <div class="card">
+                    <h3>Words to Avoid</h3>
+                    <p style="line-height: 1.8;">Cheap • Influencer • Sponsored (the whole point is uncompensated) • Hack • Miracle • Cure • Guaranteed • Discount (in negative context)</p>
+                </div>
+            </div>
+
+            <div class="section-subtitle" style="color: rgba(255,255,255,0.7); margin-top: 64px;">DESIGN PRINCIPLES</div>
+            <h2 class="section-title" style="margin-bottom: 40px;">Design Principles</h2>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Calm & Sophisticated</h3>
+                    <p>Use generous whitespace, subtle animations (under 300ms), and the muted color palette. Never flashy or attention-seeking.</p>
+                </div>
+                <div class="card">
+                    <h3>Consistent System</h3>
+                    <p>Stick to the 8px spacing scale, use Libre Baskerville exclusively, and maintain the monotone palette across all touchpoints.</p>
+                </div>
+                <div class="card">
+                    <h3>Medical Heritage</h3>
+                    <p>The caduceus icon, serif typography, and muted blues create a bridge between medical credibility and modern marketing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <img src="White_Graphic_Logo.png" alt="FrontrowMD" style="height: 32px; margin-bottom: 16px;">
+        <p>© 2026 FrontrowMD. All rights reserved.</p>
+        <p style="margin-top: 8px; opacity: 0.7;">Professional. Trustworthy. Sophisticated.</p>
+    </footer>
+
+</body>
+</html>
