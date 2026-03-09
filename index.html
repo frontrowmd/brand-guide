@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FrontrowMD — Brand Guide</title>
 <link rel="icon" type="image/png" href="FrontrowMD_Favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 /* ── RESET & VARIABLES ──────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -23,8 +23,33 @@
 }
 html{scroll-behavior:smooth;}
 body{
-  font-family:'Libre Baskerville',Georgia,serif;color:var(--deep-navy);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  color:var(--deep-navy);
   background:var(--grad-light);line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+
+/* Libre Baskerville for headlines, titles, labels, display text */
+h1,h2,h3,h4,h5,h6,
+.hero-title,.hero-sub,.hero-btn,
+.section-label,.section-title,
+.nav a,
+.color-name,.color-hex,.copy-badge,
+.gradient-name,.gradient-val,
+.type-specimen,.type-specimen *,.type-row *,.type-size,
+.logo-meta h4,.logo-meta p,
+.clinician-info h3,
+.icon-label,.icon-spec-label,.icon-spec-val,.icon-spec-desc,
+.btn,
+.card-label,.card-title,.stat-num,
+.space-label,.space-val,
+.radius-label,.radius-val,
+.motion-card-label,.motion-btn-demo,
+.motion-rules-label,.do-title,.dont-title,
+.rule-col h3,
+.tag,
+.footer,
+.toast{
+  font-family:'Libre Baskerville',Georgia,'Times New Roman',serif;
 }
 
 /* ── HERO ────────────────────────────────────────────────── */
@@ -462,13 +487,19 @@ body{
 <div id="typography">
   <section class="section fade-in">
     <p class="section-label">03 — Typography</p>
-    <h2 class="section-title">Libre Baskerville</h2>
-    <p class="section-intro">An elegant serif conveying professionalism, trustworthiness, and medical authority. Used for ALL text — headings, body, UI elements.</p>
+    <h2 class="section-title">Type System</h2>
+    <p class="section-intro">Libre Baskerville for headlines and display text. Inter 400 for body copy and paragraph text. The serif/sans pairing balances sophistication with readability.</p>
     <div class="type-specimen">
-      <h3>Weights</h3>
+      <h3>Libre Baskerville — Headlines & Display</h3>
       <p class="type-regular">Regular 400 — The quick brown fox</p>
       <p class="type-bold">Bold 700 — The quick brown fox</p>
       <p class="type-italic">Italic 400 — The quick brown fox</p>
+    </div>
+    <div class="type-specimen">
+      <h3>Inter — Body Text</h3>
+      <p style="font-family:'Inter',sans-serif;font-size:18px;margin-bottom:8px;">Regular 400 @ 18px — The quick brown fox jumps over the lazy dog.</p>
+      <p style="font-family:'Inter',sans-serif;font-size:16px;margin-bottom:8px;">Regular 400 @ 16px — The quick brown fox jumps over the lazy dog.</p>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;">Regular 400 @ 14px — The quick brown fox jumps over the lazy dog.</p>
     </div>
     <div class="type-specimen">
       <h3>Type Scale</h3>
@@ -476,7 +507,7 @@ body{
         <div class="type-row"><span class="type-size">Hero</span><span style="font-size:48px;font-weight:700;">Brand Guide</span></div>
         <div class="type-row"><span class="type-size">H1 / 36px</span><span style="font-size:36px;font-weight:700;">Section Title</span></div>
         <div class="type-row"><span class="type-size">H2 / 24px</span><span style="font-size:24px;font-weight:700;">Card Heading</span></div>
-        <div class="type-row"><span class="type-size">Body / 16px</span><span style="font-size:16px;">Body text for readable content.</span></div>
+        <div class="type-row"><span class="type-size">Body / 16px</span><span style="font-size:16px;font-family:'Inter',sans-serif;">Body text for readable content in Inter.</span></div>
         <div class="type-row"><span class="type-size">Small / 13px</span><span style="font-size:13px;">Captions, meta, footnotes.</span></div>
         <div class="type-row"><span class="type-size">Label / 11px</span><span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;">SECTION LABELS</span></div>
       </div>
@@ -696,7 +727,7 @@ body{
     <div class="rules-grid">
       <div class="rule-col do">
         <h3>✓ Do</h3>
-        <div class="rule-item">Use Libre Baskerville for ALL text (headings, body, UI)</div>
+        <div class="rule-item">Use Libre Baskerville for headlines; Inter 400 for body text</div>
         <div class="rule-item">Use the light wash gradient for backgrounds — never flat white</div>
         <div class="rule-item">Use pill-shaped buttons (border-radius: 50px)</div>
         <div class="rule-item">Maintain generous whitespace using the 8px grid</div>
@@ -712,7 +743,7 @@ body{
         <div class="rule-item">Use sharp-cornered (0px radius) cards</div>
         <div class="rule-item">Use pure black (#000000) for text</div>
         <div class="rule-item">Use spinning, bouncing, or flashy animations</div>
-        <div class="rule-item">Use sans-serif fonts anywhere in the brand system</div>
+        <div class="rule-item">Use non-brand fonts (only Libre Baskerville + Inter)</div>
       </div>
     </div>
   </section>
